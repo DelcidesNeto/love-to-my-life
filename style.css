@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #4b1832 0%, #12060d 45%, #050505 100%);
+
+    color: #f8dce7;
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+}
+
+/* FUNDO */
+.background-hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-heart {
+    position: absolute;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    animation: floatHeart linear infinite;
+
+    user-select: none;
+}
+
+@keyframes floatHeart {
+
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.background-hearts::after {
+    top: 50%;
+    animation-duration: 25s;
+}
+
+@keyframes floating {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+}
+
+/* CARROSSEL */
+.carousel-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.carousel {
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.counter-div {
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTADOR */
+.love-counter {
+    display: inline-block;
+    background-color: #292929;
+
+    text-align: center;
+
+    padding: 20px 25px;
+
+    border-radius: 18px;
+
+    margin: 30px auto;
+
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.15);
+}
+
+@keyframes pulseLove {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#relationship-date {
+    cursor: pointer;
+
+    animation: pulseLove 2.5s ease-in-out infinite;
+
+    display: inline-block;
+}
+
+#contador {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* CARDS */
+.card {
+    width: 90%;
+    max-width: 800px;
+
+    margin: 30px auto;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.poema {
+    color: black;
+    text-align: center;
+    font-style: italic;
+}
+
+/* MÚSICAS */
+.music-section {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.music-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.music-card {
+    background: #181a1b;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+.music-card h3 {
+    margin-bottom: 5px;
+}
+
+.music-card p {
+    margin-bottom: 20px;
+}
+
+.music-card video {
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 15px;
+}
+
+.music-card audio {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* CORAÇÕES */
+.heart {
+    position: fixed;
+    font-size: 25px;
+    animation: heartAnimation 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes heartAnimation {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px) scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    #contador {
+        font-size: 1rem;
+    }
+
+    .music-card iframe {
+        height: 220px;
+    }
+}
+
+.mensagem{
+    color: black;
+    font-style: italic;
+}

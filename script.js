@@ -2,6 +2,25 @@
 // CARROSSEL
 // ======================
 
+const totalImages = 4;
+
+function addImages(){
+    console.log('Adicionando imagens...');
+    var carousel = document.querySelector('.carousel')
+    for(var i = 0; i < totalImages; i++){
+        var img = document.createElement('img');
+        img.src = `fotos/${i+1}.jpeg`;
+        if (i === 0) {
+            img.classList.add('slide', 'active');
+        } else {
+            img.classList.add('slide');
+        }
+        carousel.appendChild(img);
+    }
+}
+
+addImages();
+
 const slides = document.querySelectorAll(".slide");
 
 let currentSlide = 0;
@@ -142,3 +161,5 @@ function createFloatingHeart() {
 
 // cria vários continuamente
 setInterval(createFloatingHeart, 2000);
+
+

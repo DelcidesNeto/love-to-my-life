@@ -2,7 +2,7 @@
 // CARROSSEL
 // ======================
 
-const totalImages = 4;
+const totalImages = 6;
 
 function addImages(){
     console.log('Adicionando imagens...');
